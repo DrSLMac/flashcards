@@ -1,0 +1,24 @@
+{
+    "name": "flashcards-starter",
+    "version": "1.0.0",
+    "description": "OOP Flashcards Application",
+    "main": "index.js",
+    "scripts": {
+      "test": "mocha"
+    },
+    "keywords": [
+      "javascript",
+      "testing",
+      "data manipulation"
+    ],
+    "author": "Turing School of Software & Design",
+    "license": "ISC",
+    "devDependencies": {
+      "chai": "^4.2.0",
+      "eslint": "^5.16.0",
+      "mocha": "^6.1.4"
+    },
+    "dependencies": {
+      "inquirer": "^6.3.1"
+    }
+  }

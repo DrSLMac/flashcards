@@ -127,7 +127,7 @@ describe('calculatePercentCorrect', function() {
         takeTurn('Fitzgerald', round, deck)
 
         const percentCorrect = calculatePercentCorrect(round);
-        expect(percentCorrect).to.equal("You got 66.7% correct!")
+        expect(percentCorrect).to.equal('66.7')
     })
 
 });
@@ -149,4 +149,15 @@ describe('endRound', function() {
         expect(endRound).to.be.a('function')
     });
 
+    it('should print a message to the console when the round is finished', function() {
+        takeTurn('sea otter', round, deck);
+        takeTurn('spleen', round, deck);
+        takeTurn('Fitzgerald', round, deck)
+
+        const numRight = calculatePercentCorrect(round);
+        expect(numRight).to.equal('66.7')
+        
+        const percentCorrect = endRound(round);
+        expect(percentCorrect).to.equal("** Round over! ** You answered 66.7% of the questions correctly!")
+    })
 });

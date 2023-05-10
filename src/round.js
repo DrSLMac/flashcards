@@ -25,11 +25,12 @@ const takeTurn = (guess, round, deck) => {
 
 const calculatePercentCorrect = (round) => {
     let percentCorrect = ((round.correctGuesses.length / round.deck.length) * 100).toFixed(1)
-    return `You got ${percentCorrect}% correct!`
+    return percentCorrect
 }
 
 const endRound = (round) => {
-
+    const amountCorrect = calculatePercentCorrect(round)
+    return `** Round over! ** You answered ${amountCorrect}% of the questions correctly!`
 }
 
 module.exports = { createRound, takeTurn, calculatePercentCorrect, endRound }

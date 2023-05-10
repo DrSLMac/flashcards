@@ -12,9 +12,7 @@ const {
 describe('createDeck', function() {
     let card1, card2, card3;
     let deck;
-    let deckCount;
     let round;
-    let currentCard;
 
     beforeEach(() => {
         card1 = createCard(1, 'What is Robbie\'s favorite animal', ['sea otter', 'pug', 'capybara'], 'sea otter');

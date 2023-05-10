@@ -1,10 +1,17 @@
-function evaluateGuess (guess, correctAnswer) {
-    if (guess === correctAnswer) {
-      return 'correct!'
+// const evaluateGuess = (guess, card) => {
+//     let message;
+//     guess === card.correctAnswer ? message = "correct!" : message = "incorrect!";
+//     return message;
+//   }
+
+  const evaluateGuess = (guess, card) => {
+    if (guess === card.correctAnswer) {
+        return 'correct!'
+    } else {
+        return 'incorrect!'
     }
-    else {
-      return 'incorrect!'
-    }
-  }
+}
   
   module.exports = { evaluateGuess }
+
+  

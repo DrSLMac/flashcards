@@ -1,11 +1,22 @@
-function createCard(id, question, answers, correctAnswer) {
+const createCard = (id, question, answers, correctAnswer) => {
     var card = {
         id: id,
         question: question,
         answers: answers,
-        correctAnswer: correctAnswer
+        correctAnswer: correctAnswer,
     }
     return card
 }
 
-module.exports = { createCard };
+// const evaluateGuess = (guess, card) => {
+//     if (guess === card.correctAnswer) {
+//         return 'correct!'
+//     } else {
+//         return 'incorrect!'
+//     }
+// }
+
+module.exports = { 
+    createCard,
+    // evaluateGuess,
+};

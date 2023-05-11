@@ -3,7 +3,6 @@ const { takeTurn, endRound } = require('./round');
 
 const genList = (round) => {
   let card = round.currentCard;
-  
   let choices = card.answers.map((answer, index) => {
     return {
       key: index,
@@ -11,8 +10,9 @@ const genList = (round) => {
     }
   });
   return {
+
     type: 'rawlist',
-    message: card.question,
+    message: `${card.id}.)  ${card.question}`,
     name: 'answers',
     choices: choices
   };

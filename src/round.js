@@ -11,15 +11,17 @@ const createRound = (deck) => {
     return round;
 }
 
-const takeTurn = (guess, round, deck) => {
-    const currentGuess = evaluateGuess(guess, round.currentCard)
+const takeTurn = (guess, round) => {
+
+    // console.log("round: ", round.currentCard)
+    round.turns += 1;
+    let currentGuess = evaluateGuess(guess, round.currentCard)
     if (currentGuess === 'correct!') {
         round.correctGuesses.push(round.currentCard.id)
     } else {
         round.incorrectGuesses.push(round.currentCard.id)
     }
-    round.turns += 1;
-    round.currentCard = deck[round.turns]
+    round.currentCard = round.deck[round.turns]
     return currentGuess
 }
 
@@ -30,7 +32,10 @@ const calculatePercentCorrect = (round) => {
 
 const endRound = (round) => {
     const amountCorrect = calculatePercentCorrect(round)
-    return `** Round over! ** You answered ${amountCorrect}% of the questions correctly!`
+    if (round.turns === round.deck.length) {
+        console.log(`** Round over! ** You answered ${amountCorrect}% of the questions correctly!`)
+        return `** Round over! ** You answered ${amountCorrect}% of the questions correctly!`
+    }
 }
 
 module.exports = { createRound, takeTurn, calculatePercentCorrect, endRound }
